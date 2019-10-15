@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world
+    </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        var num;
+        num = prompt('Escribe el número:', '');
+        num = parseInt(num);
+        document.write("<table border=1>");
+        for (var i = 1; i <= 10; i++) {
+            res = num * i;
+            document.write("<tr><td>" + num + "</td><td>x</td><td>" + i + "</td><td>=</td><td>" + res + "</td></tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>
