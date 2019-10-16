@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world
+    </title>
+</head>
+
+<body>
+    <script>
+        var edad, precio, coste = 60;
+        edad = window.prompt('Introduce tu edad: ', '');
+        empadronado = window.confirm('¿Estás empadronado?');
+        edad = parseInt(edad);
+        if (edad < 16 && empadronado) {
+            precio = coste * 0.7;
+        } else if (edad < 16 && !empadronado) {
+            precio = coste = 0.8;
+        } else if (edad < 18 && empadronado) {
+            precio = coste * 0.85;
+        } else if (edad < 18 && !empadronado) {
+            precio = coste * 0.8;
+        } else if (edad < 65 && empadronado) {
+            precio = coste * 0.95;
+        } else if (edad < 65 && !empadronado) {
+            precio = coste;
+        } else if (empadronado) {
+            precio = coste * 0.4;
+        } else {
+            precio = coste * 0.5;
+        }
+
+        alert("Tienes que pagar " + precio + "€");
+    </script>
+</body>
+
+</html>
