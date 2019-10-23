@@ -24,7 +24,7 @@ function mostrarFecha() {
 
   var anio = document.getElementById("anio").value;
 
-  var d = new Date(anio, mes, dia);
+  var d = new Date(anio, mes, dia).toLocaleString();
 
   document.getElementById("fecha").innerHTML = d;
 

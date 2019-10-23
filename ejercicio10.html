@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Operación:
+    <select id="operacion">
+        <option value=1>Sumar</option>
+        <option value=0>Restar</option>
+    </select>
+
+    <input type="text" size="10" id="numdias">
+
+    <button id="validar"
+        onclick='calculateDate(document.getElementById("operacion").value, document.getElementById("numdias").value);'>Calcula
+        fecha</button>
+    <p id="resultado"></p>
+    <script src="js/ejercicio10.js"></script>
+</body>
+
+</html>
