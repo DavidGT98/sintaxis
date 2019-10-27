@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Primer array: <input type="text" size="10" id="vector1"><br>
+
+    Segundo array: <input type="text" size="10" id="vector2"><br>
+
+    <button id="mayorMenorMedia" onclick='mayorMenorMedia(document.getElementById("vector1").value)'>Mayor, menor y
+        media</button>
+
+    <button id="concatenar1"
+        onclick='concatenar1(document.getElementById("vector1").value,document.getElementById("vector2").value)'>Concatenar
+        Iguales</button>
+
+    <button id="concatenar2"
+        onclick='concatenar2(document.getElementById("vector1").value,document.getElementById("vector2").value)'>Concatenar
+        diferentes</button>
+
+    <button id="ordenarBubble" onclick='ordenarBubble(document.getElementById("vector1").value)'>Ordenar con
+        bubble</button>
+
+    <p id=resultado></p>
+    <script>
+        function mayorMenorMedia(numeros) {
+            var array1 = new Array();
+            array1 = numeros.split(',');
+            var total = 0, media = 0;
+            var resultado = document.getElementById("resultado");
+
+            for (let i = 0; i < array1.length; i++) {
+                total += parseInt(array1[i]);
+            }
+
+            media = total / array1.length;
+            resultado.innerHTML = "El mayor es: " + Math.max(...array1) + " El menor es: " + Math.min(...array1) + " La media es: " + media;
+        }
+
+        function concatenar1(str1, str2) {
+            var arrayResul = new Array();
+            var resultado = document.getElementById("resultado");
+            for (let i = 0, j = 0; i < str1.length + str2.length; i++) {
+                if (i == 0 || i % 2 == 0) {
+                    arrayResul[i] = str1.charAt(j);
+                } else {
+                    arrayResul[i] = str2.charAt(j);
+                    j++;
+                }
+            }
+            resultado.innerHTML = "El resultado es: " + arrayResul.toString();
+        }
+
+        function concatenar2(str1, str2) {
+            var arrayResul = new Array();
+            var resultado = document.getElementById("resultado");
+            if (str1.length > str2.length) {
+                for (let i = 0, j = 0; i < str2.length * 2; i++) {
+                    if (i == 0 || i % 2 == 0) {
+                        arrayResul[i] = str1.charAt(j);
+                    } else {
+                        arrayResul[i] = str2.charAt(j);
+                        j++;
+                    }
+
+                }
+                arrayResul.push(str1.slice(str2.length));
+            } else {
+                for (let i = 0, j = 0; i < str1.length * 2; i++) {
+                    if (i == 0 || i % 2 == 0) {
+                        arrayResul[i] = str1.charAt(j);
+                    } else {
+                        arrayResul[i] = str2.charAt(j);
+                        j++;
+                    }
+
+                }
+                arrayResul.push(str2.slice(str1.length));
+            }
+
+            resultado.innerHTML = "El resultado es: " + arrayResul.toString();
+        }
+
+        function ordenarBubble(cad) {
+            var array2 = new Array();
+            array2 = cad.split(',');
+            var resultado = document.getElementById("resultado");
+            array2.sort(function (a, b) { return a - b; });
+
+            resultado.innerHTML = "El resultado es: " + array2.toString();
+        }
+    </script>
+</body>
+
+</html>
