@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Cadena : <input type="text" size="10" id="cadena1"><br>
+
+    <button id="obtenerInformacion" onclick='obtenerInformacion(document.getElementById("cadena1").value)'>Mostrar
+        informacion</button>
+
+    <p id=resultado></p>
+    <script>
+        function obtenerInformacion(cadena1) {
+            alert(cadena1);
+            var array1 = new Array();
+            array1 = cadena1.split(' ');
+            var elementos, priPa, ulPa, cadenaInv, ordenAZ, ordenZA;
+            elementos = array1.length;
+            priPa = array1[0];
+            ulPa = array1[elementos - 1];
+            array1.reverse();
+            cadenaInv = array1.join('-');
+            array1.sort();
+            ordenAZ = array1.toString();
+            array1.reverse();
+            ordenZA = array1.toString();
+
+            var resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = elementos + "<br>" + priPa + "<br>" + ulPa + "<br>" + cadenaInv + "<br>" + ordenAZ + "<br>" + ordenZA + "<br>";
+        }
+    </script>
+</body>
+
+</html>
