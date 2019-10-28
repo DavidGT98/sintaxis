@@ -10,6 +10,10 @@
 
     Segundo array: <input type="text" size="10" id="vector2"><br>
 
+    Posicion: <input type="text" size="10" id="posicion"><br>
+
+    Elemento: <input type="text" size="10" id="elemento"><br>
+
     <button id="mayorMenorMedia" onclick='mayorMenorMedia(document.getElementById("vector1").value)'>Mayor, menor y
         media</button>
 
@@ -20,6 +24,8 @@
     <button id="concatenar2"
         onclick='concatenar2(document.getElementById("vector1").value,document.getElementById("vector2").value)'>Concatenar
         diferentes</button>
+
+    <button id="introducir" onclick='introducir(document.getElementById("vector1").value,document.getElementById("posicion").value,document.getElementById("elemento").value)'>Introuducir en la posicion</button>
 
     <button id="ordenarBubble" onclick='ordenarBubble(document.getElementById("vector1").value)'>Ordenar con
         bubble</button>
@@ -82,6 +88,14 @@
             }
 
             resultado.innerHTML = "El resultado es: " + arrayResul.toString();
+        }
+
+        function introducir(cad, pos, ele) {
+            var array3 = new Array();
+            array3 = cad.split(',');
+            array3.splice(pos,0,ele);
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "El resultado es: " + array3.toString();
         }
 
         function ordenarBubble(cad) {

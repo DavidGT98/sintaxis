@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <p id="resultado"></p>
+    <script>
+        var array1 = new Array();
+        var resultado = document.getElementById("resultado");
+        for (let i = 0; i < 5; i++) {
+            do {
+                array1[i] = window.prompt(i + 1 + ". " + "Introduce un numero entero: ");
+                if (array1[i] % 1 != 0) {
+                    alert("Debe ser un numero entero");
+                }
+            } while (array1[i] % 1 != 0);
+        }
+
+        var repetidos = new Array();
+        var contador = 0;
+        var cadena = "";
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                if (parseInt(array1[i]) == parseInt(array1[j])) {
+                    contador++;
+                }
+            }
+
+            if (contador > 1 && repetidos.indexOf(parseInt(array1[i])) === -1) {
+                repetidos.push(parseInt(array1[i]));
+                cadena += ("<p>El numero " + array1[i] + " se repite " + contador + " veces </p>");
+            }
+            contador = 0;
+        }
+        resultado.innerHTML = cadena;
+    </script>
+</body>
+
+</html>
