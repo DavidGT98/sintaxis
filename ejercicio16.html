@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    1. Descripcion: <input type="text" size="10" id="descripcion"><br>
+    <p id="resDes"></p>
+    2. Telefono: <input type="text" size="10" id="telefono"><br>
+    <p id="resTel"></p>
+    3. Telefono Int: <input type="text" size="10" id="telefonoInt"><br>
+    <p id="resTelInt"></p>
+    4. Fecha: <input type="text" size="10" id="fecha"><br>
+    <p id="resFecha"></p>
+    5. C.P.: <input type="text" size="10" id="cp"><br>
+    <p id="resCP"></p>
+    6. Email: <input type="text" size="10" id="email"><br>
+    <p id="resEmail"></p>
+    7. Importe: <input type="text" size="10" id="importe"><br>
+    <p id="resImp"></p>
+    8. Datos bancarios: <input type="text" size="10" id="bancarios"><br>
+    <p id="resBancarios"></p>
+    9. Página: <input type="text" size="10" id="pagina"><br>
+    <p id="resPag"></p>
+    10. Web: <input type="text" size="10" id="web"><br>
+    <p id="resWeb"></p>
+    11. Web completa: <input type="text" size="10" id="webComp"><br>
+    <p id="resWebComp"></p>
+
+    <button id="validar" onclick='validar()'>Validar</button>
+
+    <script>
+        function validar() {
+            var descripcion = document.getElementById("descripcion").value;
+            var expresion1 = /^[A-Z].*\.$/;
+            var telefono = document.getElementById("telefono").value;
+            var expresion2 = /^9\d{8}$/;
+            var telefonoInt = document.getElementById("telefonoInt").value;
+            var expresion3 = /\(\+34\)9\d{8}$/;
+            var fecha = document.getElementById("fecha").value;
+            var expresion4 = /^\d{1,2}\/\d{1,2}\/\d{2,4}\ \d{1,2}\:\d{1,2}$/;
+            var cp = document.getElementById("cp").value;
+            var expresion5 = /^\d{5}$/;
+            var email = document.getElementById("email").value;
+            var expresion6 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+            var importe = document.getElementById("importe").value;
+            var expresion7 = /^\-*\d*(\.\d{1})?\d*$/;
+            var bancarios = document.getElementById("bancarios").value;
+            var expresion8 = /^\d{4}\-\d{4}-\d{2}\-\d{10}$/;
+            var pagina = document.getElementById("pagina").value;
+            var expresion9 = /^\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+            var web = document.getElementById("web").value;
+            var expresion10 = /^\w{3,4}\:\/\/\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+\:\d{1,5}$/;
+            var webComp = document.getElementById("webComp").value;
+            var expresion11 = /^\w{3,4}\:\/\/\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+\:\d{1,5}(\?param\d\=value\d)+(\&param\d\=value\d)*$/;
+
+            if (descripcion.match(expresion1)) {
+                document.getElementById("resDes").style.color = "green";
+                document.getElementById("resDes").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resDes").style.color = "red";
+                document.getElementById("resDes").innerHTML = "No es correcta";
+            }
+
+            if (telefono.match(expresion2)) {
+                document.getElementById("resTel").style.color = "green";
+                document.getElementById("resTel").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resTel").style.color = "red";
+                document.getElementById("resTel").innerHTML = "No es correcta";
+            }
+
+            if (telefonoInt.match(expresion3)) {
+                document.getElementById("resTelInt").style.color = "green";
+                document.getElementById("resTelInt").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resTelInt").style.color = "red";
+                document.getElementById("resTelInt").innerHTML = "No es correcta";
+            }
+
+            if (fecha.match(expresion4)) {
+                document.getElementById("resFecha").style.color = "green";
+                document.getElementById("resFecha").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resFecha").style.color = "red";
+                document.getElementById("resFecha").innerHTML = "No es correcta";
+            }
+
+            if (cp.match(expresion5)) {
+                document.getElementById("resCP").style.color = "green";
+                document.getElementById("resCP").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resCP").style.color = "red";
+                document.getElementById("resCP").innerHTML = "No es correcta";
+            }
+
+            if (email.match(expresion6)) {
+                document.getElementById("resEmail").style.color = "green";
+                document.getElementById("resEmail").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resEmail").style.color = "red";
+                document.getElementById("resEmail").innerHTML = "No es correcta";
+            }
+
+            if (importe.match(expresion7)) {
+                document.getElementById("resImp").style.color = "green";
+                document.getElementById("resImp").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resImp").style.color = "red";
+                document.getElementById("resImp").innerHTML = "No es correcta";
+            }
+
+            if (bancarios.match(expresion8)) {
+                document.getElementById("resBancarios").style.color = "green";
+                document.getElementById("resBancarios").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resBancarios").style.color = "red";
+                document.getElementById("resBancarios").innerHTML = "No es correcta";
+            }
+
+            if (pagina.match(expresion9)) {
+                document.getElementById("resPag").style.color = "green";
+                document.getElementById("resPag").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resPag").style.color = "red";
+                document.getElementById("resPag").innerHTML = "No es correcta";
+            }
+
+            if (web.match(expresion10)) {
+                document.getElementById("resWeb").style.color = "green";
+                document.getElementById("resWeb").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resWeb").style.color = "red";
+                document.getElementById("resWeb").innerHTML = "No es correcta";
+            }
+
+            if (webComp.match(expresion11)) {
+                document.getElementById("resWebComp").style.color = "green";
+                document.getElementById("resWebComp").innerHTML = "Es correcta";
+            } else {
+                document.getElementById("resWebComp").style.color = "red";
+                document.getElementById("resWebComp").innerHTML = "No es correcta";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
