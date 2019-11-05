@@ -19,7 +19,8 @@
     <script>
         function reemplazar(texto, palabra, palabra2) {
             var cadRes = "";
-            cadRes = texto.replace(palabra,palabra2);
+            var re = new RegExp(palabra,"g");
+            cadRes = texto.replace(re,palabra2);
             var resultado = document.getElementById("texto");
             resultado.value = cadRes;
         }
