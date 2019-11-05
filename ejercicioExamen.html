@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    Texto: <br><textarea rows="10" cols="50" id="texto" style="resize: none;"></textarea><br>
+
+    Palabra existente: <input type="text" size="10" id="palabra1"><br>
+
+    Palabra nueva: <input type="text" size="10" id="palabra2"><br>
+
+    <button id="reemplazar"
+        onclick='reemplazar(document.getElementById("texto").value,document.getElementById("palabra1").value,document.getElementById("palabra2").value)'>Introducir
+        en la posicion</button>
+
+    <script>
+        function reemplazar(texto, palabra, palabra2) {
+            var cadRes = "";
+            cadRes = texto.replace(palabra,palabra2);
+            var resultado = document.getElementById("texto");
+            resultado.value = cadRes;
+        }
+
+    </script>
+</body>
+
+</html>

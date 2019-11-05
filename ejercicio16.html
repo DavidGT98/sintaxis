@@ -40,21 +40,21 @@
             var telefonoInt = document.getElementById("telefonoInt").value;
             var expresion3 = /\(\+34\)9\d{8}$/;
             var fecha = document.getElementById("fecha").value;
-            var expresion4 = /^\d{1,2}\/\d{1,2}\/\d{2,4}\ \d{1,2}\:\d{1,2}$/;
+            var expresion4 = /^(0[1-9]|[12]\d|3[01])\/(0[1-9]|1[012])\/\d{4}\s([01]\d|2[0-3])\:[0-5]\d$/;
             var cp = document.getElementById("cp").value;
             var expresion5 = /^\d{5}$/;
             var email = document.getElementById("email").value;
             var expresion6 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
             var importe = document.getElementById("importe").value;
-            var expresion7 = /^\-*\d*(\.\d{1})?\d*$/;
+            var expresion7 = /^\-?\d*(\.\d{1})?\d*$/;
             var bancarios = document.getElementById("bancarios").value;
-            var expresion8 = /^\d{4}\-\d{4}-\d{2}\-\d{10}$/;
+            var expresion8 = /^\d{4}\-\d{4}\-\d{2}\-\d{10}$/;
             var pagina = document.getElementById("pagina").value;
             var expresion9 = /^\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+$/;
             var web = document.getElementById("web").value;
             var expresion10 = /^\w{3,4}\:\/\/\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+\:\d{1,5}$/;
             var webComp = document.getElementById("webComp").value;
-            var expresion11 = /^\w{3,4}\:\/\/\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+\:\d{1,5}(\?param\d\=value\d)+(\&param\d\=value\d)*$/;
+            var expresion11 = /^\w{3,4}\:\/\/\w+([\.-]?\w+)*\.\w+([\.-]?\w+)*(\.\w{2,4})+\:\d{1,5}(\?\w+\=\w+){1}(\&\w+\=\w+)*$/;
 
             if (descripcion.match(expresion1)) {
                 document.getElementById("resDes").style.color = "green";
