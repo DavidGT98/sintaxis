@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <script src=carrito.js> </script>
+    <script src="js/carrito.js"> </script>
 </head>
 
 <body>
@@ -11,10 +11,10 @@
 
     Precio: <input type="text" size="10" id="precio"><br><br>
 
-    <button id="registrar"
-        onclick='Añadir(document.getElementById("precio").value)'>Añadir</button>
+    <button id="registrar" onclick='añadir(document.getElementById("nombre").value,document.getElementById("precio").value)'>Añadir</button>
 
-    <h2>Carrito:</h2>
+    <button id="mostrar" onclick='mostrar()'>Mostrar carrito</button>
+
     <p id=resultado></p>
 
 </body>
