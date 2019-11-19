@@ -30,11 +30,29 @@ function añadir(nombre, precio) {
 }
 
 function mostrar() {
+    var cont = 0;
     var cadena = "<h2> Productos: </h2>";
     MiCarrito.listaArticulos.forEach(articulo => {
-        cadena += "Nombre:" + articulo.nombre + "<br>" + "Precio:" + articulo.precio + "<br>";
+        cadena += "<input type='radio' name=articulo id=" + cont + " value=" + cont + ">" + articulo.nombre + " - " + articulo.precio + "€<br>";
+        cont++;
     });
     document.getElementById("resultado").innerHTML = cadena;
 }
 
+function eliminar() {
 
+    for (let i in MiCarrito.listaArticulos) {
+
+        if (document.getElementById(i).checked) {
+
+            let preciores = MiCarrito.listaArticulos[Object.values(i)]
+
+            MiCarrito.unidades--;
+            MiCarrito.precio -= preciores.precio;
+
+            MiCarrito.listaArticulos.splice(i, 1);
+        }
+    }
+
+    mostrar();
+}
