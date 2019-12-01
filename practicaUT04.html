@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="practicaUT04.js"></script>
+</head>
+
+<body>
+    <button id="probar" onclick="test()">Pulsa para probar</button><br><br>
+
+    Tipo de producto: <select onchange="select()" id="opt">
+        <option value="" disabled selected style="display:none;"></option>
+        <option value="camiseta">Camiseta</option>
+        <option value="pantalon">Pantalon</option>
+        <option value="zapatilla">Zapatilla</option>
+    </select>
+    <br><br>
+
+    <label style="display: block; margin:.5em">Numero de serie: <input type="text" size="10" id="numSerie"></label>
+
+    <label style="display: block; margin:.5em">Nombre: <input type="text" size="10" id="nombre"></label>
+
+    <label style="display: block; margin:.5em">Precio: <input type="text" size="10" id="precio"></label>
+
+    <label style="display: block; margin:.5em">Cantidad: <input type="text" size="10" id="cantidad"></label>
+
+    <label id="tallaL" style="display: none; margin:.5em">Talla: <input type="text" size="10" id="talla"></label>
+
+    <label id="colorL" style="display: none; margin:.5em">Color: <input type="text" size="10" id="color"></label>
+
+    <label id="anchoL" style="display: none; margin:.5em">Ancho: <input type="number" size="10" min="32" max="48"
+            id="ancho"></label>
+
+    <label id="largoL" style="display: none; margin:.5em">Largo: <input type="number" size="10" min="28" max="54"
+            id="largo"></label>
+
+    <label id="numeroL" style="display: none; margin:.5em">Numero: <input type="number" size="10" min="16" max="48"
+            id="numero"></label>
+
+    <label id="tipoL" style="display: none; margin:.5em">Tipo: <input type="text" size="10" id="tipo"></label>
+
+    <button id="añadir"
+        onclick='añadir(document.getElementById("numSerie").value,document.getElementById("nombre").value,document.getElementById("precio").value, document.getElementById("cantidad").value)'>Añadir</button>
+
+    <button id="mostrar" onclick='mostrar()'>Mostrar carrito</button>
+
+    <button id="eliminar" onclick='eliminar()'>Eliminar</button>
+
+    <button id="precio" onclick='precioTotal()'>Mostrar precio total</button>
+
+    <p id="resultado"></p>
+</body>
+
+</html>
